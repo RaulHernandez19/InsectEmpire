@@ -1,0 +1,16 @@
+<main class="p-6 h-auto pt-20 text-center">
+
+
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+    <!-- Reemplaza @for con la sintaxis de Angular -->
+    <div *ngFor="let type of insect_Types_data; let i = index"
+         [ngClass]="{
+           'lg:col-span-1': (i % 6) < 4,
+           'lg:col-span-2': (i % 6) >= 4
+         }">
+      <app-type-card [infocard]="type" (cardClicked)="onCardClicked($event)"></app-type-card>
+    </div>
+  </div>
+</main>
+

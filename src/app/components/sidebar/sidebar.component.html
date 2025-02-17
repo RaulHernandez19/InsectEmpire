@@ -1,0 +1,43 @@
+<div class="antialiased bg-gray-50 dark:bg-gray-950">
+  <nav class="bg-white border-b border-gray-200 px-4 py-2.5
+   dark:bg-gray-900 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
+    <div class="flex flex-wrap justify-between items-center">
+      <div class="flex justify-start items-center">
+
+
+        <div class="flex items-center justify-between mr-4">
+          <img
+            src="assets/icono oscuro.png"
+            class="mr-3 h-8"
+            alt="Flowbite Logo"
+          />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Insect Empire</span>
+        </div>
+
+
+      </div>
+
+      <div class="flex items-center lg:order-2">
+
+
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+
+
+  @if (taxonKey == 0) {
+    <app-type-insect-section (selectedTaxonKey)="handleTaxonKey($event)"></app-type-insect-section>
+  } @else{
+    <app-insect-list-section (goBack)="goBackHandler($event)" [taxonKey]="taxonKey" [taxonName]="taxonName"></app-insect-list-section>
+  }
+
+  <footer class="bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-700 py-4 text-center bottom-0 left-0 w-full">
+    <p class="text-gray-600 dark:text-gray-300 text-sm">
+      Datos obtenidos de la <a href="https://www.gbif.org/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">API de GBIF</a>.
+    </p>
+  </footer>
+
+</div>

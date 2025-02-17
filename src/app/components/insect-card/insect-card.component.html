@@ -1,0 +1,19 @@
+<!-- src/app/components/insect-card/insect-card.component.html -->
+<div class="relative w-full h-full overflow-hidden rounded-lg shadow-lg group">
+  <!-- Imagen con filtro oscuro y rojizo -->
+  <img [src]="insect.img"
+       [alt]="insect.name"
+       class="w-full h-full object-cover brightness-50 transition-all duration-300
+       group-hover:brightness-10
+       group-hover:scale-110">
+
+  <!-- Capa rojiza semitransparente (solo en hover) -->
+  <div class="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-70"></div>
+
+  <!-- Texto centrado y más grande -->
+  <div class="absolute inset-0 flex items-end left-2 bottom-2 text-white text-xl font-bold
+  transition-all duration-300 group-hover:text-white">
+  {{ insect.name }}
+  </div>
+
+</div>

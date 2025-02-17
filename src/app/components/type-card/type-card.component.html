@@ -1,0 +1,17 @@
+<div  class="relative w-full h-full overflow-hidden rounded-lg shadow-lg group cursor-pointer"
+ (click)="onClick()" >
+  <!-- Imagen con ligero zoom en hover -->
+  <img [src]="infocard.img"
+       class="w-full h-full object-cover brightness-50 transition-all duration-300
+       group-hover:brightness-30 group-hover:sepia group-hover:opacity-80 group-hover:contrast-125
+       group-hover:scale-105"> <!-- Ligero zoom en hover -->
+
+  <!-- Capa rojiza semitransparente (solo en hover) -->
+  <div class="absolute inset-0 bg-red-700 opacity-0 transition-opacity duration-300 group-hover:opacity-70"></div>
+
+  <!-- Texto centrado y más grande -->
+  <div class="absolute inset-0 flex items-center justify-center
+   text-white text-3xl font-bold transition-all duration-100 group-hover:text-2xl">
+    {{infocard.name}}
+  </div>
+</div>
